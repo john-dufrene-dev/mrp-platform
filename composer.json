@@ -21,7 +21,8 @@
         "yajra/laravel-datatables-oracle":"~9.0",
         "appointer/swaggervel": "dev-master",
         "infyomlabs/swagger-generator": "dev-master",
-        "infyomlabs/generator-builder": "dev-master"
+        "infyomlabs/generator-builder": "dev-master",
+        "infyomlabs/routes-explorer": "dev-master"
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^2.6",
