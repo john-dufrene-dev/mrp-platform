@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "217490c99e516c53eb459369e5662732",
+    "content-hash": "e114d3bc88bf6eb1de4fda8d9dd7f4a1",
     "packages": [
         {
             "name": "appointer/swaggervel",
@@ -760,6 +760,51 @@
             "time": "2019-11-30T10:44:35+00:00"
         },
         {
+            "name": "infyomlabs/coreui-templates",
+            "version": "6.0.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/InfyOmLabs/coreui-templates.git",
+                "reference": "f12d2cbe478c54761f27cc80470dae4db88eafbc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/InfyOmLabs/coreui-templates/zipball/f12d2cbe478c54761f27cc80470dae4db88eafbc",
+                "reference": "f12d2cbe478c54761f27cc80470dae4db88eafbc",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "^6.0.0",
+                "php": ">=7.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "InfyOm\\CoreUITemplates\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mitul Golakiya",
+                    "email": "me@mitul.me"
+                }
+            ],
+            "description": "CoreUI templates for InfyOm Laravel Generator",
+            "keywords": [
+                "bootstrap",
+                "coreui",
+                "generator",
+                "infyom",
+                "laravel",
+                "templates"
+            ],
+            "time": "2019-11-30T12:03:35+00:00"
+        },
+        {
             "name": "infyomlabs/generator-builder",
             "version": "dev-master",
             "source": {
@@ -812,12 +857,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/InfyOmLabs/laravel-generator.git",
-                "reference": "ff199cee53db509789556ac16d050cef9a430c22"
+                "reference": "88ca34383d81193a18d4f33f62f5e32491c6699e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/InfyOmLabs/laravel-generator/zipball/ff199cee53db509789556ac16d050cef9a430c22",
-                "reference": "ff199cee53db509789556ac16d050cef9a430c22",
+                "url": "https://api.github.com/repos/InfyOmLabs/laravel-generator/zipball/88ca34383d81193a18d4f33f62f5e32491c6699e",
+                "reference": "88ca34383d81193a18d4f33f62f5e32491c6699e",
                 "shasum": ""
             },
             "require": {
@@ -869,7 +914,7 @@
                 "test",
                 "view"
             ],
-            "time": "2019-12-21T13:54:08+00:00"
+            "time": "2020-01-17T04:49:53+00:00"
         },
         {
             "name": "infyomlabs/routes-explorer",
@@ -1385,16 +1430,16 @@
         },
         {
             "name": "league/commonmark",
-            "version": "1.2.1",
+            "version": "1.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/commonmark.git",
-                "reference": "74e08793c41c72c8ed7a22df803f2ffcaf77efb7"
+                "reference": "34cf4ddb3892c715ae785c880e6691d839cff88d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/74e08793c41c72c8ed7a22df803f2ffcaf77efb7",
-                "reference": "74e08793c41c72c8ed7a22df803f2ffcaf77efb7",
+                "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/34cf4ddb3892c715ae785c880e6691d839cff88d",
+                "reference": "34cf4ddb3892c715ae785c880e6691d839cff88d",
                 "shasum": ""
             },
             "require": {
@@ -1452,7 +1497,7 @@
                 "markdown",
                 "parser"
             ],
-            "time": "2020-01-15T03:32:39+00:00"
+            "time": "2020-01-16T01:18:13+00:00"
         },
         {
             "name": "league/commonmark-ext-table",
@@ -6830,6 +6875,7 @@
     "stability-flags": {
         "infyomlabs/laravel-generator": 20,
         "infyomlabs/adminlte-templates": 20,
+        "infyomlabs/coreui-templates": 20,
         "appointer/swaggervel": 20,
         "infyomlabs/swagger-generator": 20,
         "infyomlabs/generator-builder": 20,
