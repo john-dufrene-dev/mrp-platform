@@ -3,6 +3,9 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
+use Symfony\Component\Process\Process;
+use Symfony\Component\Console\Input\InputOption;
+use Appointer\Swaggervel\SwaggervelServiceProvider;
 
 class InitApiCommand extends Command
 {
@@ -18,17 +21,25 @@ class InitApiCommand extends Command
      *
      * @var string
      */
-    protected $description = 'Command description';
+    protected $description = 'Command to init api-product-platform Project';
+
+    protected function getOptions()
+    {
+        return [
+            ['production', null, InputOption::VALUE_NONE, 
+            'Yarn must be install in your environnement you can alternatively change to npm', null],
+        ];
+    }
 
     /**
      * Create a new command instance.
      *
      * @return void
      */
-    public function __construct()
-    {
-        parent::__construct();
-    }
+    // public function __construct()
+    // {
+    //     parent::__construct();
+    // }
 
     /**
      * Execute the console command.
@@ -37,6 +48,21 @@ class InitApiCommand extends Command
      */
     public function handle()
     {
-        //
+        $this->info('Installation api-product-platform');
+        $this->call('vendor:publish', ['--provider' => SwaggervelServiceProvider::class]);
+
+        $this->call('migrate');
+
+        // $this->info('Generate jwt token secret');
+        // $this->call('jwt:secret');
+
+        // if ($this->option('prod')) {
+        //     $this->info('Compiling assets in production');
+        //     $process = new Process('yarn prod');
+        //     $process->setTimeout(null); // Setting timeout to null to prevent installation from stopping at a certain point in time
+        //     $process->setWorkingDirectory(base_path())->run();
+        // }
+
+        $this->info('Successfully installed Platform! Enjoy');
     }
 }
