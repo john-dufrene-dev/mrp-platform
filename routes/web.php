@@ -11,14 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Auth::routes(['register' => false]);
 
-Auth::routes();
-
-Route::get('/home', 'HomeController@index');
-
+Route::get('/', 'HomeController@index');
 
 Route::get('generator_builder', '\InfyOm\GeneratorBuilder\Controllers\GeneratorBuilderController@builder')->name('io_generator_builder');
 
