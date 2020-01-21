@@ -11,7 +11,8 @@ use Response;
  *   @SWG\Info(
  *     title="Laravel Generator APIs",
  *     version="1.0.0",
- *   )
+ *   ),
+ *   security={{"jwt": {"*"}}},
  * )
  * This class should be parent class for other API controllers
  * Class AppBaseController

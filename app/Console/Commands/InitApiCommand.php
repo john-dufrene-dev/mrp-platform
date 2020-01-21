@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
 use Symfony\Component\Process\Process;
+use Yajra\DataTables\ButtonsServiceProvider;
 use Symfony\Component\Console\Input\InputOption;
 use Appointer\Swaggervel\SwaggervelServiceProvider;
 
@@ -49,12 +50,14 @@ class InitApiCommand extends Command
     public function handle()
     {
         $this->info('Installation api-product-platform');
-        $this->call('vendor:publish', ['--provider' => SwaggervelServiceProvider::class]);
+
+        $this->info('Publish Datatables Dummy');
+        $this->call('vendor:publish', ['--provider' => ButtonsServiceProvider::class]);
 
         $this->call('migrate');
 
-        // $this->info('Generate jwt token secret');
-        // $this->call('jwt:secret');
+        $this->info('Generate jwt token secret');
+        $this->call('jwt:secret');
 
         // if ($this->option('prod')) {
         //     $this->info('Compiling assets in production');
