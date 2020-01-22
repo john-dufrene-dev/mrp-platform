@@ -13,13 +13,22 @@
 <!-- Password Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('password', 'Password') !!}
-    {!! Form::password('password', ['class' => 'form-control']) !!}
+    {!! Form::password('password', ['autocomplete' => 'on', 'class' => 'form-control']) !!}
 </div>
 
 <!-- Confirmation Password Field -->
 <div class="form-group col-sm-6">
       {!! Form::label('password', 'Password Confirmation') !!}
-    {!! Form::password('password_confirmation', ['class' => 'form-control']) !!}
+      {!! Form::password('password_confirmation', ['autocomplete' => 'on', 'class' => 'form-control']) !!}
+</div>
+
+<!-- Roles Field -->
+<div class="form-group col-sm-12">
+    {{Route::is('users.edit')}}
+    {!! Form::label('roles', 'Roles') !!}
+    {!! Form::select('roles[]', $roles, $choice = (Route::is('users.edit')) 
+        ? $userRole 
+        : false, ['class' => 'form-control', 'multiple']) !!}
 </div>
 
 <!-- Submit Field -->

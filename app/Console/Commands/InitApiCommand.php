@@ -37,10 +37,10 @@ class InitApiCommand extends Command
      *
      * @return void
      */
-    // public function __construct()
-    // {
-    //     parent::__construct();
-    // }
+    public function __construct()
+    {
+        parent::__construct();
+    }
 
     /**
      * Execute the console command.
@@ -55,6 +55,8 @@ class InitApiCommand extends Command
         $this->call('vendor:publish', ['--provider' => ButtonsServiceProvider::class]);
 
         $this->call('migrate');
+
+        $this->call('db:seed');
 
         $this->info('Generate jwt token secret');
         $this->call('jwt:secret');

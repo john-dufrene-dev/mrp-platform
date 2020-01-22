@@ -11,7 +11,7 @@
 |
 */
 
-Auth::routes(['register' => false]);
+Auth::routes();
 
 Route::get('/', 'HomeController@index');
 
@@ -30,4 +30,5 @@ Route::post(
     '\InfyOm\GeneratorBuilder\Controllers\GeneratorBuilderController@generateFromFile'
 )->name('io_generator_builder_generate_from_file');
 
-Route::resource('users', 'UserController')->middleware('auth');
+Route::resource('users', 'Users\UserController')->middleware('auth');
+Route::resource('roles','Users\RoleController')->middleware('auth');
