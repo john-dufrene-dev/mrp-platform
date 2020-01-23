@@ -1,6 +1,8 @@
 {
-    "/js/app.js": "/js/app.js",
-    "/css/app.css": "/css/app.css",
+    "/js/default.min.js": "/js/default.min.js",
+    "/css/single/vendor.css": "/css/single/vendor.css",
+    "/css/single/app.css": "/css/single/app.css",
+    "/css/default.min.css": "/css/default.min.css",
     "/node_modules/tinymce/jquery.tinymce.js": "/node_modules/tinymce/jquery.tinymce.js",
     "/node_modules/tinymce/jquery.tinymce.min.js": "/node_modules/tinymce/jquery.tinymce.min.js",
     "/node_modules/tinymce/tinymce.js": "/node_modules/tinymce/tinymce.js",

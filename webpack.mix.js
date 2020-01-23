@@ -11,8 +11,15 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
-    .sass('resources/sass/app.scss', 'public/css');
+mix.js('resources/js/app.js', 'public/js/default.min.js');
+
+mix.sass('resources/sass/vendor.scss', 'public/css/single');
+mix.sass('resources/sass/app.scss', 'public/css/single');
+
+mix.combine([
+    'public/css/single/vendor.css', 
+    'public/css/single/app.css',
+], 'public/css/default.min.css');
 
 mix.copyDirectory('node_modules/tinymce/plugins', 'public/node_modules/tinymce/plugins');
 mix.copyDirectory('node_modules/tinymce/skins', 'public/node_modules/tinymce/skins');

@@ -9,6 +9,7 @@ use Flash;
 use App\User;
 use Response;
 use Illuminate\Http\Request;
+use App\DataTables\UserDataTable;
 use Spatie\Permission\Models\Role;
 use App\Repositories\UserRepository;
 use App\Http\Requests\CreateUserRequest;
@@ -33,15 +34,12 @@ class UserController extends AppBaseController
     /**
      * Display a listing of the User.
      *
-     * @param Request $request
-     *
+     * @param RolesDataTable $usersDataTable
      * @return Response
      */
-    public function index(Request $request)
+    public function index(UserDataTable $userDataTable)
     {
-        $users = $this->userRepository->all();
-
-        return view('users.index')->with('users', $users);
+        return $userDataTable->render('users.index');
     }
 
     /**
