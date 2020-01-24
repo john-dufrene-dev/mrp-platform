@@ -14,9 +14,9 @@ class AddParentAndSon extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->integer('parent_id')->unsigned()->nullable()->default(null)->after('sponsorship');
+            $table->integer('parent_id')->unsignedBigInteger()->nullable()->default(null)->after('sponsorship');
             $table->foreign('parent_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('set null');
-            $table->integer('son_id')->unsigned()->nullable()->default(null)->after('parent_id');
+            $table->integer('son_id')->unsignedBigInteger()->nullable()->default(null)->after('parent_id');
             $table->foreign('son_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('set null');
         });
     }
