@@ -62,11 +62,11 @@ class User extends Authenticatable implements JWTSubject
 
     public function parent()
     {
-        return $this->belongsTo(self::class);
+        return $this->belongsTo(self::class, 'parent_id');
     }
 
     public function son()
     {
-        return $this->belongsTo(self::class);
+        return $this->belongsTo(self::class, 'son_id');
     }
 }
