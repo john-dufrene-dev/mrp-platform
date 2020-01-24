@@ -28,5 +28,7 @@ class CreateAdminUserSeeder extends Seeder
         $role->syncPermissions($permissions);
    
         $user->assignRole([$role->id]);
+
+        factory(User::class, 500)->create();
     }
 }
