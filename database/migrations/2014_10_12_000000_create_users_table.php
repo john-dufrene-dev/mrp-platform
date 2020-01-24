@@ -20,10 +20,6 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->string('sponsorship')->unique();
-            $table->integer('parent_id')->unsigned()->nullable()->default(null);
-            $table->foreign('parent_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('set null');
-            $table->integer('son_id')->unsigned()->nullable()->default(null);
-            $table->foreign('son_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('set null');
             $table->rememberToken();
             $table->timestamps();
         });
