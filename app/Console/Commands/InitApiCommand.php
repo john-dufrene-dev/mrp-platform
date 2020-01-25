@@ -61,6 +61,15 @@ class InitApiCommand extends Command
         $this->info('Generate jwt token secret');
         $this->call('jwt:secret');
 
+        $this->info('Install assets for adminLte');
+        $this->call('adminlte:install' , ['--only' => 'assets']);
+
+        // $this->info('Install plugins for adminLte');
+        // $this->call('adminlte:plugins install');
+
+        $this->info('Publish telescope assets for debug');
+        $this->call('telescope:install');
+
         // if ($this->option('prod')) {
         //     $this->info('Compiling assets in production');
         //     $process = new Process('yarn prod');

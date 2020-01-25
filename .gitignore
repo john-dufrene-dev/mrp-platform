@@ -3,7 +3,8 @@
 /public/node_modules
 /public/storage
 /storage/*.key
-vendor/
+/vendor
+fonts/
 /.idea
 /.vscode
 /.vagrant

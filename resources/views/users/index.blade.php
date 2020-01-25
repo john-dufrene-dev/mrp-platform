@@ -1,12 +1,12 @@
-@extends('layouts.app')
+@extends('adminlte::page')
 
 @section('content')
     <section class="content-header">
-        <h1 class="pull-left">Users</h1>
+        <h1 class="float-left">Users</h1>
 
         @can('user-create')
-        <h2 class="pull-right">
-           <a class="btn btn-primary pull-right" style="margin-top: -10px;margin-bottom: 5px" href="{!! route('users.create') !!}">Add New</a>
+        <h2 class="float-right">
+           <a class="btn btn-primary float-right" style="margin-top: -10px;margin-bottom: 5px" href="{!! route('users.create') !!}">Add New</a>
         </h2>
         @endcan
         
@@ -19,7 +19,7 @@
         <div class="clearfix"></div>
         <div class="box box-primary">
             <div class="box-body">
-                    @include('users.table')
+                @include('users.table')
             </div>
         </div>
         <div class="text-center">

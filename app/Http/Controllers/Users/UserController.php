@@ -8,6 +8,7 @@ use view;
 use Flash;
 use App\User;
 use Response;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\DataTables\UserDataTable;
 use Spatie\Permission\Models\Role;
@@ -64,6 +65,7 @@ class UserController extends AppBaseController
     {
         $input = $request->all();
         $input['password'] = Hash::make($input['password']);
+        $input['sponsorship'] = Str::random(4).'_'.uniqid();
         $user = $this->userRepository->create($input);
         $user->assignRole($request->input('roles'));
 

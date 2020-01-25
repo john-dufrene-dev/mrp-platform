@@ -1,19 +1,18 @@
-@extends('layouts.app')
+@extends('adminlte::page')
 
 @section('content')
-    <section class="content-header">
-        <h1>
-            Roles
-        </h1>
-    </section>
-    <div class="content">
-        <div class="box box-primary">
-            <div class="box-body">
-                <div class="row" style="padding-left: 20px">
-                    @include('roles.show_fields')
-                    <a href="{{ route('roles.index') }}" class="btn btn-default">Back</a>
-                </div>
-            </div>
+
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">User</h3>
+            <div class="card-tools">
+
+            <a href="{!! route('roles.index') !!}" class="btn btn-infos">Back</a>
         </div>
     </div>
+
+    <div class="card-body">
+        @include('roles.show_fields')
+    </div>
+       
 @endsection

@@ -13,6 +13,7 @@ class PermissionTableSeeder extends Seeder
     public function run()
     {
         $permissions = [
+            'telescope-admin',
             'user-list',
             'user-show',
             'user-create',

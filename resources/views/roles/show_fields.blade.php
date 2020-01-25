@@ -7,7 +7,7 @@
     <strong>Permissions :</strong>
     @if(!empty($rolePermissions))
         @foreach($rolePermissions as $v)
-            <label class="label label-success">{{ $v->name }},</label>
+            <span class="badge badge-pill badge-info"> {{ $v->name }} </span>
         @endforeach
     @endif
 </div>

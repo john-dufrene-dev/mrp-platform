@@ -1,0 +1,19 @@
+@extends('adminlte::page')
+
+@section('content')
+
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">$MODEL_NAME_HUMAN$</h3>
+            <div class="card-tools">
+
+            <a href="{{ route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.index') }}" class="btn btn-default">Back</a>
+        </div>
+    </div>
+
+    <div class="card-body">
+        @include('$VIEW_PREFIX$$MODEL_NAME_PLURAL_SNAKE$.show_fields')
+    </div>
+       
+@endsection
+

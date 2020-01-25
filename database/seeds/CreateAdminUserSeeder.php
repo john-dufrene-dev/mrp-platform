@@ -30,14 +30,18 @@ class CreateAdminUserSeeder extends Seeder
    
         $user->assignRole([$role->id]);
 
+        $role = Role::create(['name' => 'User']);
+
         factory(User::class, 100)->create();
         
-        $users = User::all();
+        $users = User::where('id', '>' , '1')->get();
 
         foreach($users as $user) {
             $user->parent_id = User::find(rand(1, 10))->id;
             $user->son_id = User::find(rand(1, 10))->id;
             $user->save();
+
+            $user->assignRole([$role->id]);
         }
     }
 }

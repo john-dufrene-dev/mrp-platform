@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Account;
 
 use App\User;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
-class HomeController extends Controller
+class AccountController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -26,6 +27,6 @@ class HomeController extends Controller
     {
         $user = User::find(auth()->user()->id);
 
-        return view('home', compact('user'));
+        return view('account.home', compact('user'));
     }
 }

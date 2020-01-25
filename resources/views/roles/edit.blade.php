@@ -1,23 +1,22 @@
-@extends('layouts.app')
+@extends('adminlte::page')
 
 @section('content')
-    <section class="content-header">
-        <h1>
-            Roles
-        </h1>
-   </section>
-   <div class="content">
-       @include('adminlte-templates::common.errors')
-       <div class="box box-primary">
-           <div class="box-body">
-               <div class="row">
-                   {!! Form::model($role, ['route' => ['roles.update', $role->id], 'method' => 'patch']) !!}
 
-                        @include('roles.fields')
+<div class="card card-default">
+    <div class="card-header">
 
-                   {!! Form::close() !!}
-               </div>
-           </div>
-       </div>
-   </div>
+        <h3 class="card-title">Roles</h3>
+
+    </div>
+
+    {!! Form::model($role, ['route' => ['roles.update', $role->id], 'method' => 'patch']) !!}
+
+    <div class="card-body">
+        <div class="row">
+            @include('roles.fields')
+        </div>
+    </div>
+
+    {!! Form::close() !!}
+
 @endsection
