@@ -31,6 +31,7 @@ class CreateAdminUserSeeder extends Seeder
         $user->assignRole([$role->id]);
 
         $role = Role::create(['name' => 'User']);
+        $role->givePermissionTo('user-account');
 
         factory(User::class, 100)->create();
         

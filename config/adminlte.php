@@ -174,19 +174,22 @@ return [
 
     'menu' => [
         [
-            'text' => 'profile',
-            'url'  => '/',
-            'icon' => 'fas fa-fw fa-user',
+            'text'          => 'profile',
+            'url'           => '/',
+            'icon'          => 'fas fa-fw fa-user',
+            'permission'    => 'user-account', // Necessary permissions required to access item
         ],
         [
-            'text' => 'users',
-            'url'  => '/users',
-            'icon' => 'fas fa-fw fa-user',
+            'text'          => 'users',
+            'url'           => '/users',
+            'icon'          => 'fas fa-users',
+            'permission'    => 'user-list', // Necessary permissions required to access item
         ],
         [
-            'text' => 'roles',
-            'url'  => '/roles',
-            'icon' => 'fas fa-fw fa-user',
+            'text'          => 'roles',
+            'url'           => '/roles',
+            'icon'          => 'fas fa-lock',
+            'permission'    => 'role-list', // Necessary permissions required to access item
         ],
     ],
 

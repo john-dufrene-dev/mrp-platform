@@ -14,6 +14,7 @@ class PermissionTableSeeder extends Seeder
     {
         $permissions = [
             'telescope-admin',
+            'user-account',
             'user-list',
             'user-show',
             'user-create',

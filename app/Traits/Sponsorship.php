@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Cache;
 
 trait Sponsorship
 {
-    protected $value_for_parent = 2.5;
+    protected $value_for_parent = 2;
 
     protected $value_for_son = 0.5;
 
