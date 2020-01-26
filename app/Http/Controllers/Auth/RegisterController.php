@@ -11,6 +11,7 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 
 class RegisterController extends Controller
 {
+    protected $assign_role = 'User'; // Default Role assign to Register User
     /*
     |--------------------------------------------------------------------------
     | Register Controller
@@ -64,11 +65,15 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
             'sponsorship' => Str::random(4).'_'.uniqid(),
         ]);
+
+        $user->assignRole($this->assign_role);
+
+        return $user;
     }
 }

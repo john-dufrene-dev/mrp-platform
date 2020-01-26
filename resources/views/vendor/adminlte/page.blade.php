@@ -168,12 +168,7 @@
             @endif
         </div>
 
-        @hasSection('footer')
-        <footer class="main-footer">
-
-            @yield('footer')
-        </footer>
-        @endif
+        @include('partials.footer')
 
         @if(config('adminlte.right_sidebar'))
             <aside class="control-sidebar control-sidebar-{{config('adminlte.right_sidebar_theme')}}">

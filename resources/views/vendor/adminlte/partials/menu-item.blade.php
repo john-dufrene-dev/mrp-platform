@@ -17,7 +17,6 @@
             </form>
         </li>
     @else
-        @if( auth()->user()->can($item['permission']) )
         <li @if (isset($item['id'])) id="{{ $item['id'] }}" @endif class="nav-item @if (isset($item['submenu'])){{ $item['submenu_class'] }}@endif">
             <a class="nav-link {{ $item['class'] }}" href="{{ $item['href'] }}"
                @if (isset($item['target'])) target="{{ $item['target'] }}" @endif
@@ -40,6 +39,5 @@
                 </ul>
             @endif
         </li>
-        @endif
     @endif
 @endif

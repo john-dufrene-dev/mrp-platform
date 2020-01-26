@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'title' => 'AdminLTE 3',
+    'title' => 'Mon réseau privé',
     'title_prefix' => '',
     'title_postfix' => '',
 
@@ -30,7 +30,7 @@ return [
     |
     */
 
-    'logo' => '<b>Admin</b>LTE',
+    'logo' => '<b>Mon</b> réseau privé',
     'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
     'logo_img_class' => 'brand-image-xl',
     'logo_img_xl' => null,
@@ -132,7 +132,7 @@ return [
     |
     */
 
-    'use_route_url' => true,
+    'use_route_url' => false,
 
     'dashboard_url' => '',
 
@@ -174,22 +174,22 @@ return [
 
     'menu' => [
         [
-            'text'          => 'profile',
-            'url'           => '/',
-            'icon'          => 'fas fa-fw fa-user',
-            'permission'    => 'user-account', // Necessary permissions required to access item
+            'text'   => 'Account',
+            'url'    => '/',
+            'icon'   => 'fas fa-fw fa-user ',
+            'can'    => 'user-account', // Necessary permissions required to access item
         ],
         [
-            'text'          => 'users',
-            'url'           => '/users',
-            'icon'          => 'fas fa-users',
-            'permission'    => 'user-list', // Necessary permissions required to access item
+            'text'   => 'Users',
+            'url'    => '/users',
+            'icon'   => 'fas fa-fw fa-users ',
+            'can'    => 'user-list', // Necessary permissions required to access item
         ],
         [
-            'text'          => 'roles',
-            'url'           => '/roles',
-            'icon'          => 'fas fa-lock',
-            'permission'    => 'role-list', // Necessary permissions required to access item
+            'text'   => 'Roles',
+            'url'    => '/roles',
+            'icon'   => 'fas fa-fw fa-lock ',
+            'can'    => 'role-list', // Necessary permissions required to access item
         ],
     ],
 

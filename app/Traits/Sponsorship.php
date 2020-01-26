@@ -84,6 +84,44 @@ trait Sponsorship
     }
 
     /**
+     * Get parents values.
+     *
+     * @return mixed
+     */
+    public function getAllParentsLimit($limit = 5)
+    {
+        $parents = User::where('parent_id', $this->id)
+                ->orderBy('created_at', 'desc')
+                ->limit($limit)
+                ->get();
+
+        if ( count($parents) != 0 ) {
+            return $parents;
+        }
+
+        return null;
+    }
+
+    /**
+     * Get sons values.
+     *
+     * @return mixed
+     */
+    public function getAllSonsLimit($limit = 5)
+    {
+        $sons = User::where('son_id', $this->id)
+                ->orderBy('created_at', 'desc')
+                ->limit($limit)
+                ->get();
+
+        if ( count($sons) != 0 ) {
+            return $sons;
+        }
+
+        return null;
+    }
+
+    /**
      * Get number of parents.
      *
      * @return mixed

@@ -20,4 +20,6 @@
 
     {!! Form::close() !!}
 
+</div>
+
 @endsection

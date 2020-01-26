@@ -2,70 +2,51 @@
 
 @section('content')
 
-<section class="content-header">
+<section class="content">
 
-    <h1 class="pull-left">Account</h1>
-    
-</section>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3">
 
-<div class="content">
-    <div class="clearfix"></div>
+                @include('account.partials.infos')
 
-    @include('flash::message')
+            </div>
 
-    <div class="clearfix"></div>
-    <div class="box box-primary">
-        <div class="box-body">
+            <div class="col-md-9">
+                <div class="card">
 
-            <h3> Bienvenue <span> {{ $user->username() }} </span> </h3>
+                    @if( auth()->check() )
+                    <div class="card-header p-2">
+                        <ul class="nav nav-pills">
+                            <li class="nav-item"><a class="nav-link active" href="#activity" data-toggle="tab">Activity</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#settings" data-toggle="tab">Settings</a></li>
+                        </ul>
+                    </div>
 
-            <div>
-                <h4>Votre numéro de parainage : {{ $user->sponsor() }} </h4>
-            </div><hr>
+                    <div class="card-body">
+                        <div class="tab-content">
 
-            <div>
-                <h4>@if($user->getParent()) Vous avez été parrainé par {{ $user->getParent()->name }}  
-                @else Vous n'avez pas de parrain @endif </h4>
-            </div><br>
+                            <div class="tab-pane active" id="activity">
+                                @include('account.partials.items.activities')
+                            </div>
+                        
+                            <div class="tab-pane" id="settings">
+                                @include('account.partials.items.settings')
+                            </div>
 
-            @if(!$user->getAllParents())
-                <p>Vous n'avez pas de parrains <span class="badge"> {{ $user->parentCount() }} </span> </p><hr>
-            @else
-                <p>Félicitation vous êtes parrain ! <span class="badge"> {{ $user->parentCount() }} </span> </p>
-                <ul>
-                    @foreach($user->getAllParents() as $parent)
-                    <li>{{ $parent->name }}</li>
-                    @endforeach
-                </ul>
-                <p>Vos parrains vous rapportent {{ $user->valueParentsPayment() }} € </p><hr>
-            @endif
+                        </div>
+                    </div>
+                    @else
+                        In progress
+                    @endif
 
-            <div>
-                <h4>@if($user->getParent()) Vous êtes le filleul de {{ $user->getParent()->name }}  
-                @else Vous n'avez pas de filleuls @endif </h4>
-            </div><br>
-
-            @if(!$user->getAllParents())
-                <p>Vous n'avez pas de filleuls <span class="badge"> {{ $user->sonCount() }} </span> </p><hr>
-            @else
-                <p>Félicitation vous êtes filleul ! <span class="badge"> {{ $user->sonCount() }} </span> </p>
-                <ul>
-                    @foreach($user->getAllSons() as $parent)
-                    <li>{{ $parent->name }}</li>
-                    @endforeach
-                </ul>
-                <p>Vos filleuls vous rapportent {{ $user->valueSonsPayment() }} € </p><hr>
-            @endif
-
-            <div>
-                <h4>Total : {{ $user->totalPayment() }} € </h4>
+                </div>
             </div>
 
         </div>
+
     </div>
-    <div class="text-center">
-    
-    </div>
-</div>
+
+</section>
 
 @endsection
