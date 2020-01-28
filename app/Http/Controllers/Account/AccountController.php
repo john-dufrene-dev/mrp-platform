@@ -27,6 +27,6 @@ class AccountController extends Controller
     {
         $user = User::find(auth()->user()->id);
 
-        return view('account.home', compact('user'));
+        return view('account.index', compact('user'));
     }
 }

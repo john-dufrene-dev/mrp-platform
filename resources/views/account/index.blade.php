@@ -8,7 +8,7 @@
         <div class="row">
             <div class="col-md-3">
 
-                @include('account.partials.infos')
+                @include('account.details.infos')
 
             </div>
 
@@ -27,11 +27,11 @@
                         <div class="tab-content">
 
                             <div class="tab-pane active" id="activity">
-                                @include('account.partials.items.activities')
+                                @include('account.details.items.activities')
                             </div>
                         
                             <div class="tab-pane" id="settings">
-                                @include('account.partials.items.settings')
+                                @include('account.details.items.settings')
                             </div>
 
                         </div>

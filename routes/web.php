@@ -13,7 +13,7 @@
 
 Auth::routes();
 
-Route::get('/', 'Account\AccountController@index')->name('account.home');
+Route::get('/', 'Account\AccountController@index')->name('account.index');
 
 Route::get('generator_builder', '\InfyOm\GeneratorBuilder\Controllers\GeneratorBuilderController@builder')->name('io_generator_builder');
 
@@ -32,3 +32,8 @@ Route::post(
 
 Route::resource('users', 'Users\UserController')->middleware('auth');
 Route::resource('roles','Users\RoleController')->middleware('auth');
+
+// Methods payments routes
+Route::get('methods/payments', 'Account\Methods\MethodsController@index')->name('methods.index')->middleware('auth');
+Route::post('methods/payments', 'Account\Methods\MethodsController@store')->name('methods.store')->middleware('auth');
+Route::delete('methods/payments', 'Account\Methods\MethodsController@delete')->name('methods.destroy')->middleware('auth');

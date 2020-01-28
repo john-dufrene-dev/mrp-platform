@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddParentAndSon extends Migration
+class CreateCustomerColumns extends Migration
 {
     /**
      * Run the migrations.
@@ -14,10 +14,10 @@ class AddParentAndSon extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->integer('parent_id')->unsigned()->nullable()->default(null)->after('sponsorship');
-            $table->foreign('parent_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('set null');
-            $table->integer('son_id')->unsigned()->nullable()->default(null)->after('parent_id');
-            $table->foreign('son_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('set null');
+            $table->string('stripe_id')->nullable()->index();
+            $table->string('card_brand')->nullable();
+            $table->string('card_last_four', 4)->nullable();
+            $table->timestamp('trial_ends_at')->nullable();
         });
     }
 
@@ -30,8 +30,10 @@ class AddParentAndSon extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->dropColumn([
-                'parent_id',
-                'son_id',
+                'stripe_id',
+                'card_brand',
+                'card_last_four',
+                'trial_ends_at',
             ]);
         });
     }

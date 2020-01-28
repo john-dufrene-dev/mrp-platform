@@ -3,6 +3,7 @@
 namespace App;
 
 use App\Traits\Sponsorship;
+use Laravel\Cashier\Billable;
 use Spatie\Permission\Traits\HasRoles;
 use Tymon\JWTAuth\Contracts\JWTSubject;
 use Illuminate\Notifications\Notifiable;
@@ -11,7 +12,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable implements JWTSubject
 {
-    use Notifiable, HasRoles, Sponsorship;
+    use Notifiable, HasRoles, Billable, Sponsorship;
 
     /**
      * The attributes that are mass assignable.
